@@ -30,7 +30,6 @@ class Rotations
 
   def juggling(arr, d)
     gcd = gcd(arr.length, d)
-    p gcd
     i = 0
     while i < gcd
       temp = arr[0]
@@ -51,5 +50,45 @@ class Rotations
       i += 1
     end
     arr
+  end
+
+  def reverse_array(arr, start, ending)
+    while start < ending
+      temp = arr[ending]
+      arr[ending] = arr[start]
+      arr[start] = temp
+      start += 1
+      ending -= 1
+    end
+    arr
+  end
+
+  def reversal(arr, d)
+    reverse_array(arr, 0, d-1)
+    reverse_array(arr, d, arr.length-1)
+    reverse_array(arr, 0, arr.length-1)
+  end
+
+  def swap(arr, start, ending, d)
+    i = 0
+    while i < d 
+      temp = arr[start + i]
+      arr[start + i] = arr[ending + i]
+      arr[ending + i] = temp
+      i += 1
+    end
+    arr
+  end
+
+  def block_swap_recurse(arr, i, d, len)
+    return arr if len == d || d == 0
+    return swap(arr, i, len-d+i, d) if len-d == d
+    if d < len-d 
+      swap(arr, i, len-d+i, d)
+      block_swap_recurse(arr, i, d, len-d)
+    else
+      swap(arr, i, d, len-d)
+      block_swap_recurse(arr, len-d+i, 2*d-len, d)
+    end
   end
 end
