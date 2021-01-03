@@ -5,19 +5,47 @@
 
 class Rotations
   def temp_array(arr, d)
-    temp = arr.shift(d)
-    arr.concat(temp)
+    # Using some built-in array methods
+    # temp = arr.shift(d)
+    # arr.concat(temp)
+
+    #No built-ins!
+    temp = []
+    for i in (0..d-1)
+      temp.push(arr[i])
+    end
+    arr.each_with_index do |item, index|
+      arr[index-d] = item if index >= d
+    end
+    temp.each_with_index do |item, index|
+      arr[index+arr.length-d] = item
+    end
+    arr
   end
 
-  def left_rotate(arr, d)
+  def rotate_once(arr)
+    temp = arr[0]
+    arr.each_with_index{ |item, index| arr[index-1] = item if index > 0 }
+    arr[arr.length-1] = temp
+    arr
+  end
+
+  def one_by_one(arr, d)
+    # i = 0
+    # while i < d
+    #   temp = arr[0]
+    #   arr.each_with_index do |item, index|
+    #     # Ruby wraps array indexes
+    #     arr[index-1] = item if index > 0
+    #   end
+    #   arr[arr.length-1] = temp
+    #   i += 1
+    # end
+    # arr
+
     i = 0
-    while i < d
-      temp = arr[0]
-      arr.each_with_index do |item, index|
-        # Ruby wraps array indexes
-        arr[index-1] = item if index > 0
-      end
-      arr[arr.length-1] = temp
+    while i < d 
+      rotate_once(arr)
       i += 1
     end
     arr
@@ -29,44 +57,47 @@ class Rotations
   end
 
   def juggling(arr, d)
-    gcd = gcd(arr.length, d)
+    len = arr.length
+    gcd = gcd(len, d)
     i = 0
     while i < gcd
       temp = arr[0]
       j = i
-      while 1
-        k = j + d
-
-        k = k-arr.length if k >= arr.length
-
-        break if k == i
-
+      while true 
+        k = j+d
+        k = k-len if k >= len
+        break if k==i
         arr[j] = arr[k]
-
         j = k
       end
-
       arr[j] = temp
-      i += 1
+      i+=1
     end
     arr
   end
 
   def reverse_array(arr, start, ending)
     while start < ending
-      temp = arr[ending]
-      arr[ending] = arr[start]
-      arr[start] = temp
-      start += 1
-      ending -= 1
+      temp = arr[start]
+      arr[start] = arr[ending]
+      arr[ending] = temp
+      start+=1
+      ending-=1
     end
     arr
   end
 
   def reversal(arr, d)
-    reverse_array(arr, 0, d-1)
-    reverse_array(arr, d, arr.length-1)
-    reverse_array(arr, 0, arr.length-1)
+    len = arr.length-1
+    #reverse the parts then reverse the whole array
+    # reverse_array(arr, 0, d-1)
+    # reverse_array(arr, d, arr.length-1)
+    # reverse_array(arr, 0, arr.length-1)
+
+    # revers the whole array then reverse the parts
+    reverse_array(arr, 0, len)
+    reverse_array(arr, 0, len-d)
+    reverse_array(arr, len-d+1, len)
   end
 
   def swap(arr, start, ending, d)

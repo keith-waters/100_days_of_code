@@ -9,16 +9,34 @@ class TestRotations < Minitest::Test
   def test_temp_array
     assert_equal @rotations.temp_array([1,2,3], 2), [3,1,2]
     assert_equal @rotations.temp_array([1,2,3,4,5,6], 5), [6,1,2,3,4,5]
+    assert_equal @rotations.temp_array([1,2,3,4,5,6], 3), [4,5,6,1,2,3]
   end
 
-  def test_left_rotate
-    assert_equal @rotations.left_rotate([1,2,3], 2), [3,1,2]
-    assert_equal @rotations.left_rotate([1,2,3,4,5,6], 5), [6,1,2,3,4,5]
+  def test_rotate_once
+    assert_equal @rotations.rotate_once([1,2,3]), [2,3,1]
+    assert_equal @rotations.rotate_once([1,2,3,4,5,6]), [2,3,4,5,6,1]
+  end
+
+  def test_one_by_one
+    assert_equal @rotations.one_by_one([1,2,3], 2), [3,1,2]
+    assert_equal @rotations.one_by_one([1,2,3,4,5,6], 5), [6,1,2,3,4,5]
+  end
+
+  def test_gcd
+    assert_equal @rotations.gcd(12, 3), 3
+    assert_equal @rotations.gcd(6, 3), 3 
+    assert_equal @rotations.gcd(12, 24), 12 
+    assert_equal @rotations.gcd(12, 10), 2 
   end
 
   def test_juggling
     assert_equal @rotations.juggling([1,2,3], 2), [3,1,2]
     assert_equal @rotations.juggling([1,2,3,4,5,6], 5), [6,1,2,3,4,5]
+  end
+
+  def test_reverse_array
+    assert_equal @rotations.reverse_array([1,2,3], 0, 2), [3,2,1]
+    assert_equal @rotations.reverse_array([1,2,3,4,5,6], 0, 2), [3,2,1,4,5,6]
   end
 
   def test_reversal
