@@ -108,4 +108,34 @@ class Rearrangement
     ending = arr.length-1
     r_recursive(arr, start, ending)
   end
+
+  # elements at even positions are greater than ALL elements before it and elements at odd positions are less than all elements before it
+  def odds_and_evens(arr)
+    len = arr.length
+    arr_copy = []
+    range = (0..len-1)
+    even = len/2
+    odd = len-even
+
+    for i in range
+      arr_copy[i] = arr[i].dup
+    end
+    
+    arr_copy.sort!
+    j = odd-1
+    for i in (0..len-1).step(2)
+      p arr_copy[j]
+      arr[i] = arr_copy[j]
+      j-=1
+    end
+
+    j = odd
+    for i in (1..len-1).step(2)
+      p arr_copy[j]
+      arr[i] = arr_copy[j]
+      j+=1
+    end
+    
+    arr
+  end
 end

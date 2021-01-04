@@ -41,4 +41,9 @@ class TestRearrangement < Minitest::Test
     assert_equal @rearrangement.reverse_recursive([12,13,14,15]), [15,14,13,12]
     assert_equal @rearrangement.reverse_recursive('zigzagoon'), 'noogazgiz'
   end
+  
+  def test_odds_and_evens
+    assert_equal @rearrangement.odds_and_evens([1,2,3,4,5,7,6]), [4,5,3,6,2,7,1]
+    assert_equal @rearrangement.odds_and_evens([1,2,1,4,5,6,8,8]), [4,5,2,6,1,8,1,8]
+  end
 end
