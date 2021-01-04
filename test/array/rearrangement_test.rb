@@ -29,4 +29,16 @@ class TestRearrangement < Minitest::Test
     assert_equal @rearrangement.swap_elements(@arr_1), @sorted_arr_1
     assert_equal @rearrangement.swap_elements(@arr_2), @sorted_arr_2
   end
+
+  def test_reverse_iterative
+    assert_equal @rearrangement.reverse_iterative([1,2,3,4,5,6]), [6,5,4,3,2,1]
+    assert_equal @rearrangement.reverse_iterative([12,13,14,15]), [15,14,13,12]
+    assert_equal @rearrangement.reverse_iterative('zigzagoon'), 'noogazgiz'
+  end
+
+  def test_reverse_recursive
+    assert_equal @rearrangement.reverse_recursive([1,2,3,4,5,6], 0, 5), [6,5,4,3,2,1]
+    assert_equal @rearrangement.reverse_recursive([12,13,14,15], 0, 3), [15,14,13,12]
+    assert_equal @rearrangement.reverse_recursive('zigzagoon', 0, 8), 'noogazgiz'
+  end
 end

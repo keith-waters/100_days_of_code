@@ -73,4 +73,28 @@ class Rearrangement
     end
     arr
   end
+
+  def reverse_iterative(arr)
+    start = 0
+    ending = arr.length-1
+    while start < ending
+      temp = arr[start]
+      arr[start] = arr[ending]
+      arr[ending] = temp
+      start+=1
+      ending-=1
+    end
+    arr
+  end
+
+
+  def reverse_recursive(arr, start, ending)
+    return if start >= ending
+    temp = arr[start]
+    arr[start] = arr[ending]
+    arr[ending] = temp
+
+    reverse_recursive(arr, start+1, ending-1)
+    arr
+  end
 end
