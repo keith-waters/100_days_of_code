@@ -24,4 +24,9 @@ class TestRearrangement < Minitest::Test
     assert_equal @rearrangement.hash_set(@arr_1), @sorted_arr_1
     assert_equal @rearrangement.hash_set(@arr_2), @sorted_arr_2
   end
+
+  def test_swap_elements
+    assert_equal @rearrangement.swap_elements(@arr_1), @sorted_arr_1
+    assert_equal @rearrangement.swap_elements(@arr_2), @sorted_arr_2
+  end
 end

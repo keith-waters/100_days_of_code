@@ -57,4 +57,20 @@ class Rearrangement
 
     arr
   end
+
+  def swap_elements(arr)
+    index = 0
+    while index < arr.length
+      if arr[index] >= 0 && arr[index] != index
+        temp = arr[arr[index]]
+        arr[arr[index]] = arr[index]
+        arr[index] = temp
+      else
+        # this is why this works!!! the loop
+        # does not advance if it does a swap
+        index+=1
+      end
+    end
+    arr
+  end
 end
