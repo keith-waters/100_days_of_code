@@ -1,6 +1,20 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 4
+Review of array rearrangements
+- hash_set, swap_elements [link](https://www.geeksforgeeks.org/rearrange-array-arri/)
+  - swap_elements made more sense this time
+- reverse_iterative, reverse_recursive [link](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
+
+Array rearrangements
+- Odds and evens [link](https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/)
+
+Sorting
+- Simple, min heap
+  - simple solution, super easy
+  - got stuck on implementing the min heap...
+
 ## Day 3
 Review of array rearrangements
 - Naive and check and replace [link](https://www.geeksforgeeks.org/rearrange-array-arri/)
