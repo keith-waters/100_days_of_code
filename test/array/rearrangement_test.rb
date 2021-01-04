@@ -19,4 +19,9 @@ class TestRearrangement < Minitest::Test
     assert_equal @rearrangement.check_and_replace(@arr_1), @sorted_arr_1
     assert_equal @rearrangement.check_and_replace(@arr_2), @sorted_arr_2
   end
+
+  def test_hash_set
+    assert_equal @rearrangement.hash_set(@arr_1), @sorted_arr_1
+    assert_equal @rearrangement.hash_set(@arr_2), @sorted_arr_2
+  end
 end
