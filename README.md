@@ -1,6 +1,16 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 3
+Review of array rearrangements
+- Naive and check and replace [link](https://www.geeksforgeeks.org/rearrange-array-arri/)
+Array rearrangments
+- hash_set, swap_elements
+  - hash_set made sense from the get go
+  - swap_elements confused me at first
+- reverse_iterative, reverse_recursive [link](https://www.geeksforgeeks.org/write-a-program-to-reverse-an-array-or-string/)
+ - reverse_iterative, reverse_recursive made sense. Had done the iterave version in array rotations on Day 1
+
 ## Day 2
 Review of array rotations
 - juggling still strange to me
