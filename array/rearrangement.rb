@@ -44,32 +44,35 @@ class Rearrangement
 
   def hash_set(arr)
     hash = {}
-    arr.each { |item| hash[item] = true }
+    len = arr.length
+    range = (0..len-1)
 
-    arr.each_with_index do |item, index| 
-      if hash[index]
-        arr[index] = index  
-      else
-        arr[index] = -1
-      end
-
+    for i in range
+      hash[arr[i]] = true
     end
 
+    for i in range
+      if hash[i]
+        arr[i] = i 
+      else
+        arr[i] = -1
+      end
+    end
     arr
   end
 
   def swap_elements(arr)
+    len = arr.length
     index = 0
-    while index < arr.length
-      if arr[index] >= 0 && arr[index] != index
+
+    while index < len
+      if arr[index] != -1 && arr[index] != index
         temp = arr[arr[index]]
         arr[arr[index]] = arr[index]
         arr[index] = temp
-      else
-        # this is why this works!!! the loop
-        # does not advance if it does a swap
-        index+=1
+        next
       end
+      index+=1
     end
     arr
   end
@@ -77,24 +80,32 @@ class Rearrangement
   def reverse_iterative(arr)
     start = 0
     ending = arr.length-1
+
     while start < ending
-      temp = arr[start]
-      arr[start] = arr[ending]
-      arr[ending] = temp
+      temp = arr[ending]
+      arr[ending] = arr[start]
+      arr[start] = temp
       start+=1
       ending-=1
     end
     arr
   end
 
-
-  def reverse_recursive(arr, start, ending)
+  def r_recursive(arr, start, ending)
     return if start >= ending
+
     temp = arr[start]
     arr[start] = arr[ending]
     arr[ending] = temp
 
-    reverse_recursive(arr, start+1, ending-1)
+    
+    r_recursive(arr, start+1, ending-1) 
     arr
+  end
+
+  def reverse_recursive(arr)
+    start = 0
+    ending = arr.length-1
+    r_recursive(arr, start, ending)
   end
 end

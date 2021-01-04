@@ -37,8 +37,8 @@ class TestRearrangement < Minitest::Test
   end
 
   def test_reverse_recursive
-    assert_equal @rearrangement.reverse_recursive([1,2,3,4,5,6], 0, 5), [6,5,4,3,2,1]
-    assert_equal @rearrangement.reverse_recursive([12,13,14,15], 0, 3), [15,14,13,12]
-    assert_equal @rearrangement.reverse_recursive('zigzagoon', 0, 8), 'noogazgiz'
+    assert_equal @rearrangement.reverse_recursive([1,2,3,4,5,6]), [6,5,4,3,2,1]
+    assert_equal @rearrangement.reverse_recursive([12,13,14,15]), [15,14,13,12]
+    assert_equal @rearrangement.reverse_recursive('zigzagoon'), 'noogazgiz'
   end
 end
