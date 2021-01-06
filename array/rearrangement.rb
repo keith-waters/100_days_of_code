@@ -112,30 +112,27 @@ class Rearrangement
   # elements at even positions are greater than ALL elements before it and elements at odd positions are less than all elements before it
   def odds_and_evens(arr)
     len = arr.length
-    arr_copy = []
-    range = (0..len-1)
-    even = len/2
-    odd = len-even
-
-    for i in range
-      arr_copy[i] = arr[i].dup
-    end
-    
+    arr_copy = arr.dup
     arr_copy.sort!
+    # these are position NOT index
+    even = len/2    # len=3 -> even=1; len=4 -> even=2
+    odd = len-even  # len=3 -> odd=2; len=4 -> odd=2
+
     j = odd-1
-    for i in (0..len-1).step(2)
-      p arr_copy[j]
+    i = 0
+    while i < len
       arr[i] = arr_copy[j]
+      i+=2
       j-=1
     end
 
     j = odd
-    for i in (1..len-1).step(2)
-      p arr_copy[j]
+    i = 1 
+    while i < len
       arr[i] = arr_copy[j]
+      i+=2
       j+=1
     end
-    
     arr
   end
 end
