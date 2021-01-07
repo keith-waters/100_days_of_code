@@ -1,13 +1,22 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 6
+Review k'th smallest
+- k'th smallest element with min and max heap [link](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/)
+  - much better understanding of the heap implementation
+
+K'th smallest
+- quick sort
+  - got it working but don't understand it...
+
 ## Day 5
 Review array rearrangements
 - Odds and evens [link](https://www.geeksforgeeks.org/rearrange-array-arri-arrj-even-arri/)
   - This made way more sense today!
 
 Sorting
-- k'th smallest element with min and max heap
+- k'th smallest element with min and max heap [link](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/)
   - min heap stuuumpted me. copy coded it from the c++ example and it started to sink in
   - max heap was easier after working with min heap, but still a bit confusing
 
