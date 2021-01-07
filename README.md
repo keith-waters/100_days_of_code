@@ -1,6 +1,13 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 7
+Review k'th smallest
+- k'th smallest element with quick sort [link](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/)
+  - better understanding of the partition method
+
+Easy problems on binarysearch.com
+
 ## Day 6
 Review k'th smallest
 - k'th smallest element with min and max heap [link](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/)
