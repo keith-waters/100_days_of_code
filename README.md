@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 8
+Stacks
+- Tower of hanoi - iterative [link](https://www.geeksforgeeks.org/iterative-tower-of-hanoi/)
+  - [wikipedia](https://en.wikipedia.org/wiki/Tower_of_Hanoi) was super helpful 
+  - confused for the first hour, copy coded, then cleaned up the code and it made a bit more sense
+
+Easy problems on binarysearch.com
+
 ## Day 7
 Review k'th smallest
 - k'th smallest element with quick sort [link](https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/)
