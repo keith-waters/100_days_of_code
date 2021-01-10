@@ -13,4 +13,8 @@ class TestTowerOfHanoi < Minitest::Test
     assert_equal @tower_of_hanoi.iterative([[4,3,2,1],[],[]]), [[],[],[4,3,2,1]]
   end
   
+  def test_recursive
+    assert_equal @tower_of_hanoi.call_recursive(@matrix), @matrix_moved
+    assert_equal @tower_of_hanoi.call_recursive([[4,3,2,1],[],[]]), [[],[],[4,3,2,1]]
+  end
 end

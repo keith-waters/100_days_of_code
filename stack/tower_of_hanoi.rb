@@ -28,7 +28,6 @@ class TowerOfHanoi
     total_moves = (2**discs)-1
 
     move_disc = lambda do |source,dest|
-      p source,dest
       if source.length == 0
         source.push(dest.pop)
       elsif dest.length == 0
@@ -41,12 +40,33 @@ class TowerOfHanoi
     end
 
     for i in (1..total_moves)
-      p i
       move_disc.call(source, dest) if i%3 == 1
       move_disc.call(source, aux) if i%3 == 2
       move_disc.call(aux, dest) if i%3 == 0
     end
 
     discs%2 == 0 ? [source, dest, aux] : [source, aux, dest]
+  end
+
+  def recursive(n, from_rod, to_rod, aux_rod)
+    # def TowerOfHanoi(n , from_rod, to_rod, aux_rod):
+    #   if n == 1:
+    #       print("Move disk 1 from rod",from_rod,"to rod",to_rod)
+    #       return
+    #   TowerOfHanoi(n-1, from_rod, aux_rod, to_rod)
+    #   print("Move disk",n,"from rod",from_rod,"to rod",to_rod)
+    #   TowerOfHanoi(n-1, aux_rod, to_rod, from_rod)
+
+    if n>0
+      recursive(n-1, from_rod, aux_rod, to_rod)
+      to_rod.push(from_rod.pop)
+      recursive(n-1, aux_rod, to_rod, from_rod)
+    end
+  end
+
+  def call_recursive(towers)
+    n = towers[0].length
+    recursive(n, towers[0], towers[2], towers[1])
+    towers
   end
 end
