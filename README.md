@@ -1,6 +1,21 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 9
+Review Stacks
+- Tower of hanoi - iterative [link](https://www.geeksforgeeks.org/iterative-tower-of-hanoi/)
+
+Stacks
+- Tower of hanoi - recursive [link](https://www.geeksforgeeks.org/c-program-for-tower-of-hanoi/)
+  - so much confusion around this, but got it to work
+
+Queue
+- implement a queue with 2 stacks [link](https://www.geeksforgeeks.org/queue-using-stacks/)
+  - this was pretty straitforward
+
+Tree
+- Started looking at breadth first search on binary tree....
+
 ## Day 8
 Stacks
 - Tower of hanoi - iterative [link](https://www.geeksforgeeks.org/iterative-tower-of-hanoi/)
