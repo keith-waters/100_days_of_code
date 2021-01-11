@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 11
+Binary trees
+- Review breadth first iterative and depth first recursive
+- Depth first iterative inorder and post order
+  - figured out inorder and preorder pretty easily [link](https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion/)
+  - had to look up another article for postorder [link](https://www.geeksforgeeks.org/iterative-postorder-traversal-using-stack/)
+  - pretty easy to implement, though not sure i understand the postorder well
+
 ## Day 10
 Binary trees!
 - Breadth first traversal - iterative [link](https://www.geeksforgeeks.org/level-order-tree-traversal/)
