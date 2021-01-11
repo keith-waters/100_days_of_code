@@ -29,4 +29,12 @@ class TestBinaryTree < Minitest::Test
   def test_depth_first_postorder_recursive
     assert_equal [4,5,2,3,1], @tree.depth_first_postorder_recursive(@root)
   end
+
+  def test_depth_first_iterative_inorder
+    assert_equal [4,2,5,1,3], @tree.depth_first_iterative_inorder(@root)
+  end
+
+  def test_depth_first_iterative_postorder
+    assert_equal [4,5,2,3,1], @tree.depth_first_iterative_postorder(@root)
+  end
 end
