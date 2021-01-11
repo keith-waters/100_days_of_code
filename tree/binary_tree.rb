@@ -11,24 +11,52 @@ class Node
 end
 
 class BinaryTree
-  def initialize
+
+  # printLevelorder(tree)
+  # 1) Create an empty queue q
+  # 2) temp_node = root /*start from root*/
+  # 3) Loop while temp_node is not NULL
+  #     a) print temp_node->data.
+  #     b) Enqueue temp_node’s children 
+  #       (first left then right children) to q
+  #     c) Dequeue a node from q.
+
+  def breadth_first_iterative(root)
+    queue = []
+    temp = root
+    answer = []
+
+    while !temp.nil?
+      answer.push(temp.value)
+      queue.push(temp.left)
+      queue.push(temp.right)
+      temp = queue.shift
+    end
+    answer
   end
 
-# # Function to  print level order traversal of tree
-# def printLevelOrder(root):
-#   h = height(root)
-#   for i in range(1, h+1):
-#       printGivenLevel(root, i)
+  def depth_first_inorder_recursive(root, arr=[])
+    arr = arr
+    depth_first_inorder_recursive(root.left, arr) unless root.left.nil?
+    arr.push(root.value)
+    depth_first_inorder_recursive(root.right, arr) unless root.right.nil?
+    arr
+  end
 
+  def depth_first_preorder_recursive(root, arr=[])
+    arr = arr
+    arr.push(root.value)
+    depth_first_preorder_recursive(root.left, arr) unless root.left.nil?
+    depth_first_preorder_recursive(root.right, arr) unless root.right.nil?
+    arr
+  end
 
-# # Print nodes at a given level
-# def printGivenLevel(root , level):
-#   if root is None:
-#       return
-#   if level == 1:
-#       print(root.data,end=" ")
-#   elif level > 1 :
-#       printGivenLevel(root.left , level-1)
-#       printGivenLevel(root.right , level-1)
+  def depth_first_postorder_recursive(root, arr=[])
+    arr = arr
+    depth_first_postorder_recursive(root.left, arr) unless root.left.nil?
+    depth_first_postorder_recursive(root.right, arr) unless root.right.nil?
+    arr.push(root.value)
+    arr
+  end
 
 end
