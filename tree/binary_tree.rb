@@ -11,7 +11,6 @@ class Node
 end
 
 class BinaryTree
-
   # printLevelorder(tree)
   # 1) Create an empty queue q
   # 2) temp_node = root /*start from root*/
@@ -24,39 +23,39 @@ class BinaryTree
   def breadth_first_iterative(root)
     queue = []
     temp = root
-    answer = []
+    ans = []
 
     while !temp.nil?
-      answer.push(temp.value)
+      ans.push(temp.value)
       queue.push(temp.left)
       queue.push(temp.right)
       temp = queue.shift
     end
-    answer
+    ans
   end
 
-  def depth_first_inorder_recursive(root, arr=[])
-    arr = arr
-    depth_first_inorder_recursive(root.left, arr) unless root.left.nil?
+  def inorder(root, arr=[])
+    inorder(root.left, arr) unless root.left.nil?
     arr.push(root.value)
-    depth_first_inorder_recursive(root.right, arr) unless root.right.nil?
+    inorder(root.right, arr) unless root.right.nil?
     arr
   end
 
+  def depth_first_inorder_recursive(root)
+    inorder(root, [])
+  end
+
   def depth_first_preorder_recursive(root, arr=[])
-    arr = arr
     arr.push(root.value)
-    depth_first_preorder_recursive(root.left, arr) unless root.left.nil?
-    depth_first_preorder_recursive(root.right, arr) unless root.right.nil?
+    depth_first_preorder_recursive(root.left, arr) if !root.left.nil?
+    depth_first_preorder_recursive(root.right, arr) if !root.right.nil?
     arr
   end
 
   def depth_first_postorder_recursive(root, arr=[])
-    arr = arr
-    depth_first_postorder_recursive(root.left, arr) unless root.left.nil?
-    depth_first_postorder_recursive(root.right, arr) unless root.right.nil?
+    depth_first_postorder_recursive(root.left, arr) if !root.left.nil?
+    depth_first_postorder_recursive(root.right, arr) if !root.right.nil?
     arr.push(root.value)
     arr
   end
-
 end
