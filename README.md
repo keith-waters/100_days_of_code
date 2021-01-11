@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 10
+Binary trees!
+- Breadth first traversal - iterative [link](https://www.geeksforgeeks.org/level-order-tree-traversal/)
+  - this seemed overwhelming at first. but way better when I figured out the queue method
+- Depth first search - recursive
+  - inorder, preorder, postorder [link](https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/)
+  - did this one from memory!!! learned about the different orders.
+
 ## Day 9
 Review Stacks
 - Tower of hanoi - iterative [link](https://www.geeksforgeeks.org/iterative-tower-of-hanoi/)
