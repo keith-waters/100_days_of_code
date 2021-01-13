@@ -1,6 +1,11 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 12
+- Review depth first iterative preorder, inorder and post order
+  - made more sense today. don't think I could implement from memory
+- Easy coding problems on binarysearch.com
+
 ## Day 11
 Binary trees
 - Review breadth first iterative and depth first recursive
