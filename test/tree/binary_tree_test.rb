@@ -34,6 +34,10 @@ class TestBinaryTree < Minitest::Test
     assert_equal [4,2,5,1,3], @tree.depth_first_iterative_inorder(@root)
   end
 
+  def test_depth_first_iterative_preorder
+    assert_equal [1,2,4,5,3], @tree.depth_first_iterative_preorder(@root)
+  end
+
   def test_depth_first_iterative_postorder
     assert_equal [4,5,2,3,1], @tree.depth_first_iterative_postorder(@root)
   end

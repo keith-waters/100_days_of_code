@@ -68,31 +68,43 @@ class BinaryTree
     #     b) Print the popped item, set current = popped_item->right 
     #     c) Go to step 3.
     # 5) If current is NULL and stack is empty then we are done.
-    
-    temp = root
+
+    node = root
     stack = []
     ans = []
-    
-    while true
-      if !temp.nil?
-        stack.push(temp)
-        # preorder
-        # ans.push(temp.value)
-        temp = temp.left
-        next
-      end
 
-      if temp.nil? && stack.length > 0
+    while !(node.nil? && stack.empty?)
+      unless node.nil?
+        stack.push(node)
+        node = node.left
+      end
+      if node.nil? && !stack.empty?
         popped = stack.pop
-        # inorder
         ans.push(popped.value)
-        temp = popped.right
+        node = popped.right
       end
-
-      break if temp.nil? && stack.length == 0 
     end
-    
-    stack.each { |i| p i.value }
+    ans
+  end
+
+  def depth_first_iterative_preorder(root)
+    # 1) Create an empty stack nodeStack and push root node to stack. 
+    # 2) Do following while nodeStack is not empty. 
+    # ….a) Pop an item from stack and print it. 
+    # ….b) Push right child of popped item to stack 
+    # ….c) Push left child of popped item to stack
+    # Right child is pushed before left child to make sure that left subtree is processed first.
+    stack = []
+    ans = []
+
+    stack.push(root)
+
+    while !stack.empty?
+      popped = stack.pop
+      ans.push(popped.value)
+      stack.push(popped.right) unless popped.right.nil?
+      stack.push(popped.left) unless popped.left.nil?
+    end
     ans
   end
 
@@ -109,27 +121,26 @@ class BinaryTree
     # 2.3 Repeat steps 2.1 and 2.2 while stack is not empty.
 
     stack = []
-    temp = root
+    node = root
     ans = []
 
-    while true
-      if !temp.nil?
-        stack.push(temp.right) unless temp.right.nil?
-        stack.push(temp)
-        temp = temp.left
+    while true 
+      unless node.nil?
+        stack.push(node.right) unless node.right.nil?
+        stack.push(node)
+        node = node.left
         next
       end
 
-      temp = stack.pop
-      if temp.right && temp.right == stack[stack.length-1]
+      node = stack.pop
+      if node.right && node.right == stack[stack.length-1]
         popped = stack.pop
-        stack.push(temp)
-        temp = popped
+        stack.push(node)
+        node = popped
       else
-        ans.push(temp.value)
-        temp = nil
+        ans.push(node.value)
+        node = nil
       end
-      
       break if stack.empty?
     end
     ans
