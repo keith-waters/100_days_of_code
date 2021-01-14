@@ -1,6 +1,13 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 13
+- Linked lists with lots of operations
+  - unshift, insert, and push [link](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/)
+  - remove [link](https://www.geeksforgeeks.org/linked-list-set-3-deleting-node/)
+  - remove at position [link](https://www.geeksforgeeks.org/delete-a-linked-list-node-at-a-given-position/)
+  - length - iterative and recursive [link](https://www.geeksforgeeks.org/find-length-of-a-linked-list-iterative-and-recursive/)
+
 ## Day 12
 - Review depth first iterative preorder, inorder and post order
   - made more sense today. don't think I could implement from memory
