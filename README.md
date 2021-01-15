@@ -1,6 +1,12 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 14
+- Review linked list opertions (see Day 13 below)
+- Linked list reverse - [link](https://www.geeksforgeeks.org/reverse-a-linked-list/)
+  - looked at Geeks for Geeks after the fact
+  - figured it out on my own using a stack!
+
 ## Day 13
 - Linked lists with lots of operations
   - unshift, insert, and push [link](https://www.geeksforgeeks.org/linked-list-set-2-inserting-a-node/)
