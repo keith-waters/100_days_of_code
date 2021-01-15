@@ -106,4 +106,24 @@ class LinkedList
     return 0 if head.nil?
     1+length_recursive(head.next)
   end
+
+  def reverse
+    stack = []
+
+    temp = head
+    while !temp.nil?
+      stack.push(temp)
+      temp = temp.next
+    end
+
+    @head = stack.pop
+    @head.next = nil
+    prev = head
+
+    while !stack.empty?
+      prev.next = stack.pop
+      prev.next.next = nil
+      prev = prev.next
+    end
+  end
 end

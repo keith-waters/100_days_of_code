@@ -48,4 +48,9 @@ class TestLinkedList < Minitest::Test
   def test_length_recursive
     assert_equal 6, @linked_list.length_recursive
   end
+
+  def test_reverse
+    @linked_list.reverse
+    assert_equal [6,5,4,3,2,1], @linked_list.traverse
+  end
 end
