@@ -1,55 +1,51 @@
 require "minitest/autorun"
 require_relative "../../linked_list/traversal"
 
-class TestTraversal < Minitest::Test
+class TestLinkedList < Minitest::Test
   def setup
-    @head = Node.new(1)
-    @head.next = Node.new(2)
-    @head.next.next = Node.new(3)
-    @head.next.next.next = Node.new(4)
-    @head.next.next.next.next = Node.new(5)
-    @traversal = Traversal.new
+    @linked_list = LinkedList.new([1,2,3,4,5,6])
   end
 
   def test_traverse
-    assert_equal [1,2,3,4,5], @traversal.traverse(@head)
+    assert_equal [1,2,3,4,5,6], @linked_list.traverse
   end
 
   def test_unshift
-    head = @traversal.unshift(10, @head)
-    assert_equal [10,1,2,3,4,5], @traversal.traverse(head)
+    @linked_list.unshift(10)
+    assert_equal [10,1,2,3,4,5,6], @linked_list.traverse
   end
 
   def test_insert
-    head = @traversal.insert(10, @head, 3)
-    assert_equal [1,2,3,10,4,5], @traversal.traverse(head)
+    @linked_list.insert(10, 3)
+    assert_equal [1,2,3,10,4,5,6], @linked_list.traverse
   end
 
   def test_push
-    head = @traversal.push(10, @head)
-    assert_equal [1,2,3,4,5,10], @traversal.traverse(head)
+    @linked_list.push(10)
+    assert_equal [1,2,3,4,5,6,10], @linked_list.traverse
   end
 
   def test_remove
-    head = @traversal.remove(3, @head)
-    assert_equal [1,2,4,5], @traversal.traverse(head)
+    @linked_list.remove(3)
+    assert_equal [1,2,4,5,6], @linked_list.traverse
   end
 
-  def test_remove_at_position_3
-    head = @traversal.remove_at_position(3, @head)
-    assert_equal [1,2,4,5], @traversal.traverse(head)
+  # position is 0 indexed
+  def test_remove_at_position_2
+    @linked_list.remove_at_position(2)
+    assert_equal [1,2,4,5,6], @linked_list.traverse
   end
 
-  def test_remove_at_position_1
-    head = @traversal.remove_at_position(1, @head)
-    assert_equal [2,3,4,5], @traversal.traverse(head)
+  def test_remove_at_position_0
+    @linked_list.remove_at_position(0)
+    assert_equal [2,3,4,5,6], @linked_list.traverse
   end
 
   def test_length_iterative
-    assert_equal 5, @traversal.length_iterative(@head)
+    assert_equal 6, @linked_list.length_iterative
   end
 
   def test_length_recursive
-    assert_equal 5, @traversal.length_recursive(@head)
+    assert_equal 6, @linked_list.length_recursive
   end
 end

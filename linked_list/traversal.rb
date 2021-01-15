@@ -7,92 +7,103 @@ class Node
   end
 end
 
-class Traversal
-  def traverse(head)
+class LinkedList
+  attr_accessor :head
+
+  def initialize(arr)
+    @head = Node.new(arr[0])
+
+    prev = @head 
+    current = nil
+    for i in (1..arr.length-1)
+      current = Node.new(arr[i])
+      prev.next = current
+      prev = current
+    end
+  end
+
+  def traverse
     ans = []
     temp = head
     while !temp.nil?
       ans.push(temp.value)
       temp = temp.next
     end
-    p ans
+    ans
   end
 
-  def unshift(val, head)
+  def unshift(val)
     node = Node.new(val)
     node.next = head
-    node
+    @head = node
   end
 
-  def insert(val, head, prev_node_value)
+  def insert(val, prev_node_value)
     node = Node.new(val)
     prev_node = nil
-
     temp = head
-    while !temp.nil? 
+
+    while !temp.nil?
       if temp.value == prev_node_value
-        prev_node = temp 
+        prev_node = temp
         break
       end
       temp = temp.next
     end
-
     node.next = prev_node.next
     prev_node.next = node
-    head
   end
 
-  def push(val, head)
-    node = Node.new(val)
+  def push(val)
     temp = head
-    while !temp.nil? 
+    while true 
       if temp.next.nil?
-        temp.next = node
+        temp.next = Node.new(val)
         break
       end
       temp = temp.next
     end
-    head
   end
 
-  def remove(val, head)
+  def remove(val)
     temp = head
-    while !temp.nil? 
+    while true
       if temp.next.value == val
         temp.next = temp.next.next
         break
       end
       temp = temp.next
     end
-    head
   end
 
-  def remove_at_position(pos, head)
-    temp = head
-    return head.next if pos == 1
+  def remove_at_position(pos)
+    # position is 0 indexed
+    if pos == 0
+      @head = @head.next 
+      return
+    end
 
-    for i in (2..pos-1)
+    temp = head
+    i = 1
+    while i < pos
       temp = temp.next
+      i+=1
     end
     temp.next = temp.next.next
-    head
   end
 
-  def length_iterative(head)
+  def length_iterative
     temp = head
-    count = 0
+    length = 0
     while !temp.nil?
       temp = temp.next
-      count+=1
+      length+=1
     end
-    count
+    length
   end
 
-  def length_recursive(head)
-    if head.nil?
-      return 0
-    else
-      return 1+length_recursive(head.next)
-    end
+  def length_recursive(head = @head)
+    return 0 if head.nil?
+    1+length_recursive(head.next)
   end
 end
