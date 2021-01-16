@@ -107,10 +107,10 @@ class LinkedList
     1+length_recursive(head.next)
   end
 
-  def reverse
+  def reverse_with_stack
     stack = []
-
     temp = head
+
     while !temp.nil?
       stack.push(temp)
       temp = temp.next
@@ -118,12 +118,37 @@ class LinkedList
 
     @head = stack.pop
     @head.next = nil
-    prev = head
+    prev = @head
 
     while !stack.empty?
       prev.next = stack.pop
       prev.next.next = nil
       prev = prev.next
     end
+  end
+
+  def reverse_iterative
+    # Initialize three pointers prev as NULL, curr as head and next as NULL.
+    # Iterate through the linked list. In loop, do following. 
+    # // Before changing next of current, 
+    # // store next node 
+    # next = curr->next
+    # // Now change next of current 
+    # // This is where actual reversing happens 
+    # curr->next = prev 
+    # // Move prev and curr one step forward 
+    # prev = curr 
+    # curr = next
+    prev = nil
+    current = @head
+    upcoming = nil
+
+    while !current.nil?
+      upcoming = current.next
+      current.next = prev
+      prev = current
+      current = upcoming 
+    end
+    @head = prev
   end
 end
