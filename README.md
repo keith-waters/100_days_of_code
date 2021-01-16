@@ -1,6 +1,13 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 15
+- Review Linked list reversal [link](https://www.geeksforgeeks.org/reverse-a-linked-list/)
+  - got the iterative version working
+- Moved into Tries [link](https://www.geeksforgeeks.org/trie-insert-and-search/)
+  - super confused at first. thought each node would keep up with the letter value ("a") but it keeps up with it by using an index in an array with 26 values
+  - excited to review this tomorrow!
+
 ## Day 14
 - Review linked list opertions (see Day 13 below)
 - Linked list reverse - [link](https://www.geeksforgeeks.org/reverse-a-linked-list/)
