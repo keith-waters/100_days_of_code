@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 16
+- Review Trie insert and search [link](https://www.geeksforgeeks.org/trie-insert-and-search/)
+  - made more sense today :)
+- Implemented Trie operations
+  - remove [link](https://www.geeksforgeeks.org/trie-delete/)
+  - display [link](https://www.geeksforgeeks.org/trie-display-content/)
+    - this was odd translating from the c++ code. had to figure out how the characters needed to be displayed
+
 ## Day 15
 - Review Linked list reversal [link](https://www.geeksforgeeks.org/reverse-a-linked-list/)
   - got the iterative version working
