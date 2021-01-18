@@ -40,24 +40,22 @@ class Trie
 
     def remove(key, current=@root, depth=0)
       return if current.nil?
-
-      if depth == key.chars.length
-        current.end_of_word = false if current.end_of_word
+      
+      if depth == key.length
+        current.end_of_word = false
         current = nil if current.children.empty?
         return current
       end
-  
+
       index = key[depth].ord - 97
       current.children[index] = remove(key, current.children[index], depth+1)
-      current = nil if current.children.empty? && current.end_of_word == false
+      current = nil if current.children.empty? && !current.end_of_word
       current
     end
 
   def display(string=[], level=0, current=@root, arr=[])
-    if current.end_of_word
-      arr.push(string.slice(0,level).join)
-    end
-  
+    arr.push(string.slice(0,level).join) if current.end_of_word
+
     for i in (0..25)
       if current.children[i]
         string[level] = (i + 97).chr
