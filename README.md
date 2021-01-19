@@ -1,6 +1,10 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 18
+- CodinGame!!!
+  - Played Ghost in the Cell and Power of Thor
+
 ## Day 17
 - Review Trie
   - remove [link](https://www.geeksforgeeks.org/trie-delete/)
