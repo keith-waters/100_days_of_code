@@ -1,6 +1,17 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 19
+- Graphs!
+  - adjacency list [link](https://www.geeksforgeeks.org/graph-and-its-representations/)
+    - made way more sense once I could visualize the list
+  - breadth first search [link](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+  - depth first recursive [link](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)
+  - depth first iterative 
+    - Twitch chat helped me figure this out!! use a stack instead of queue for breadth first
+    - thanks maldocrosse and vizghar
+
+
 ## Day 18
 - CodinGame!!!
   - Played Ghost in the Cell and Power of Thor
