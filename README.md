@@ -1,6 +1,15 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 20
+- Review Graphs
+  - adjacency list [link](https://www.geeksforgeeks.org/graph-and-its-representations/)
+    - made way more sense once I could visualize the list
+  - breadth first search [link](https://www.geeksforgeeks.org/breadth-first-search-or-bfs-for-a-graph/)
+  - depth first recursive [link](https://www.geeksforgeeks.org/depth-first-search-or-dfs-for-a-graph/)
+  - depth first iterative 
+- Start implementing Dijkstras shortest path
+
 ## Day 19
 - Graphs!
   - adjacency list [link](https://www.geeksforgeeks.org/graph-and-its-representations/)
