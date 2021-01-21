@@ -1,6 +1,12 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 21
+- Adjacency matrix Dijkstras shortest path works! [link](https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-greedy-algo-7/)
+  - still a bit confused on this, but did get it working
+- Adjacency list Dijkstras shortest path [link](http://geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/)
+  - this looks much more complex, maybe its just because G4G has so much code for it?
+
 ## Day 20
 - Review Graphs
   - adjacency list [link](https://www.geeksforgeeks.org/graph-and-its-representations/)
