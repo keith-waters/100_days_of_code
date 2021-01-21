@@ -1,33 +1,40 @@
+require 'set'
+
 class AdjacencyList
-  attr_accessor :hash
+  attr_accessor :array
 
   def initialize
-    @hash = Hash.new { |hash, key| hash[key] = []}
+    # default hash values
+    # @hash = Hash.new { |hash, key| hash[key] = [] }
+    @array = []
   end
 
   def add_edge(source, dest)
-    @hash[source].push(dest) 
+    @array[source] = [] unless @array[source]
+    # check dest, just in case its never added as a source
+    @array[dest] = [] unless @array[dest]
+    @array[source].push(dest)
   end
 
   def print_graph
-    @hash.each { |key, value| puts "#{key} -> #{value.join(" -> ")}" }
+    # @hash.each { |key, value| puts "#{key} -> #{value.join(" -> ")}" }
+    @array.each_with_index { |list, index| puts "#{index} -> #{list.join(" -> ")}"}
   end
 
-  def breath_first_search(vertex)
+  def breadth_first_traversal(vertex)
     arr = []
-    visited = [false] * @hash.size
+    visited = Set[vertex]
     queue = []
-    visited[vertex] = true
     queue.push(vertex)
-    
+
     while !queue.empty?
       temp = queue.shift
       arr.push(temp)
-    
-      @hash[temp].each do |i| 
-        unless visited[i] 
-          visited[i] = true
-          queue.push(i) 
+
+      @array[temp].each do |i|
+        unless visited.include?(i)
+          visited.add(i)
+          queue.push(i)
         end
       end
     end
@@ -36,40 +43,33 @@ class AdjacencyList
 
   def depth_first_search(num)
     arr = []
-    # can use a Set of vertices for visited
-    visited = Array.new(@hash.size, false)
+    visited = Set[]
 
-    recur = lambda do |index|
-      visited[index] = true
+    recur = ->(index) { 
+      visited.add(index)
       arr.push(index)
-      @hash[index].each do |value|
-        recur.call(value) if !visited[value]
-      end
-    end
-
+      @array[index].each { |value| recur.call(value) unless visited.include?(value) }
+    }
     recur.call(num)
     arr
   end
 
   def depth_first_iterative(vertex)
     arr = []
-    visited = [false] * @hash.size
-    stack = []
-    visited[vertex] = true
-    stack.push(vertex)
-    
+    visited = Set[vertex]
+    stack = [vertex]
+
     while !stack.empty?
       temp = stack.pop
       arr.push(temp)
-    
-      @hash[temp].each do |i| 
-        unless visited[i] 
-          visited[i] = true
-          stack.push(i) 
+
+      @array[temp].each do |i|
+        unless visited.include?(i)
+          visited.add(i)
+          stack.push(i)
         end
       end
     end
     arr
   end
-
 end
