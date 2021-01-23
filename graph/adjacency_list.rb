@@ -72,22 +72,18 @@ class AdjacencyList
     end
     arr
   end
-
-
+end
   
-  # def printArr(dist, n):
-  #     print "Vertex\tDistance from source"
-  #     for i in range(n):
-  #         print "%d\t\t%d" % (i,dist[i])
-  
-  
-  # class Graph():
-  
+class Graph
+  def initialize
+    @graph = Hash.new { |hash, key| hash[key] = [] }
+  end
   #     def __init__(self, V):
   #         self.V = V
   #         self.graph = defaultdict(list)
   
   #     # Adds an edge to an undirected graph
+  def add_edge(source, dest, weight)
   #     def addEdge(self, src, dest, weight):
   
   #         # Add an edge from src to dest.  A new node 
@@ -97,12 +93,16 @@ class AdjacencyList
   #         # and the second elements has the weight
   #         newNode = [dest, weight]
   #         self.graph[src].insert(0, newNode)
+    @graph[source].unshift([dest, weight])
   
   #         # Since graph is undirected, add an edge 
   #         # from dest to src also
   #         newNode = [src, weight]
   #         self.graph[dest].insert(0, newNode)
-  
+    @graph[dest].unshift([source, weight])
+  end
+
+  def dijkstra(src)
   #     # The main function that calulates distances 
   #     # of shortest paths from src to all vertices. 
   #     # It is a O(ELogV) function
@@ -112,8 +112,10 @@ class AdjacencyList
   #         dist = []   # dist values used to pick minimum 
   #                     # weight edge in cut
   
+    dist = []
   #         # minHeap represents set E
   #         minHeap = Heap()
+    min_heap = Heap.new
   
   #         #  Initialize min heap with all vertices. 
   #         # dist value of all vertices
@@ -122,32 +124,47 @@ class AdjacencyList
   #             minHeap.array.append( minHeap.
   #                                 newMinHeapNode(v, dist[v]))
   #             minHeap.pos.append(v)
-  
+    really_big_num = Float::INFINITY
+    for v in (0..@graph.size-1)
+      dist.push(really_big_num)
+      min_heap.array.push(min_heap.new_node(v, dist[v]))
+      min_heap.pos.push(v)
+    end
   #         # Make dist value of src vertex as 0 so 
   #         # that it is extracted first
   #         minHeap.pos[src] = src
   #         dist[src] = 0
   #         minHeap.decreaseKey(src, dist[src])
+    min_heap.pos[src] = src
+    dist[src] = 0
+    min_heap.decrease_key(src, dist[src])
   
   #         # Initially size of min heap is equal to V
   #         minHeap.size = V;
+    min_heap.size = @graph.size
   
   #         # In the following loop, 
   #         # min heap contains all nodes
   #         # whose shortest distance is not yet finalized.
+    while !min_heap.is_empty?
   #         while minHeap.isEmpty() == False:
   
   #             # Extract the vertex 
   #             # with minimum distance value
   #             newHeapNode = minHeap.extractMin()
   #             u = newHeapNode[0]
-  
+      print min_heap.inspect
+      temp = min_heap.extract_min
+      u = temp[0]
   #             # Traverse through all adjacent vertices of 
   #             # u (the extracted vertex) and update their 
   #             # distance values
+      for p_crawl in @graph[u]
+
   #             for pCrawl in self.graph[u]:
   
   #                 v = pCrawl[0]
+        v = p_crawl[0]
   
   #                 # If shortest distance to v is not finalized 
   #                 # yet, and distance to v through u is less 
@@ -155,37 +172,32 @@ class AdjacencyList
   #                 if minHeap.isInMinHeap(v) and
   #                     dist[u] != sys.maxint and \
   #                   pCrawl[1] + dist[u] < dist[v]:
+        if min_heap.is_in_heap?(v) && dist[u] != really_big_num && p_crawl[1]+dist[u] < dist[v]
   #                         dist[v] = pCrawl[1] + dist[u]
+          dist[v] = p_crawl[1] + dist[u]
+        end
   
   #                         # update distance value 
   #                         # in min heap also
   #                         minHeap.decreaseKey(v, dist[v])
+        min_heap.decrease_key(v, dist[v])
+      end
+    end
   
+    print dist
   #         printArr(dist,V)
+  end
   
-  
-  # # Driver program to test the above functions
-  # graph = Graph(9)
-  # graph.addEdge(0, 1, 4)
-  # graph.addEdge(0, 7, 8)
-  # graph.addEdge(1, 2, 8)
-  # graph.addEdge(1, 7, 11)
-  # graph.addEdge(2, 3, 7)
-  # graph.addEdge(2, 8, 2)
-  # graph.addEdge(2, 5, 4)
-  # graph.addEdge(3, 4, 9)
-  # graph.addEdge(3, 5, 14)
-  # graph.addEdge(4, 5, 10)
-  # graph.addEdge(5, 6, 2)
-  # graph.addEdge(6, 7, 1)
-  # graph.addEdge(6, 8, 6)
-  # graph.addEdge(7, 8, 7)
-  # graph.dijkstra(0)
+  def print(*args)
+    string = ""
+    args.each { |arg| string += "#{arg}, "}
+    p string
+  end
 end
 
 
 class Heap
-
+  attr_accessor :array, :size, :pos
   # class Heap():
  
   #   def __init__(self):
@@ -198,6 +210,11 @@ class Heap
     @pos = []
   end
  
+  def print(*args)
+    string = ""
+    args.each { |arg| string += "#{arg}, "}
+    p string
+  end
   #   def newMinHeapNode(self, v, dist):
   #       minHeapNode = [v, dist]
   #       return minHeapNode
@@ -281,7 +298,8 @@ class Heap
     #     # Replace root node with last node
     #     lastNode = self.array[self.size - 1]
     #     self.array[0] = lastNode
-    last_node = @array[@size.length-1]
+    last_node = @array[@size-1]
+    @array[0] = last_node
  
   #       # Update position of last node
   #       self.pos[lastNode[0]] = 0
@@ -306,11 +324,8 @@ class Heap
  
   def decrease_key(value, distance)
   #   def decreaseKey(self, v, dist):
- 
   #       # Get the index of v in  heap array
- 
   #       i = self.pos[v]
- 
     index = @pos[value]
   #       # Get the node and update its dist value
   #       self.array[i][1] = dist
@@ -321,13 +336,11 @@ class Heap
     while index > 0 && @array[index][1] < @array[parent_index][1]
   #       while i > 0 and self.array[i][1] < 
   #                 self.array[(i - 1) / 2][1]:
- 
   #           # Swap this node with its parent
   #           self.pos[ self.array[i][0] ] = (i-1)/2
       @pos[@array[index][0]] = parent_index
   #           self.pos[ self.array[(i-1)/2][0] ] = i
       @pos[@array[parent_index][0]] = index
-
   #           self.swapMinHeapNode(i, (i - 1)/2 )
       swap_node(index, parent_index)
   #           # move to parent index
