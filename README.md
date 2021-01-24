@@ -1,6 +1,11 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 23
+- Adjacency list Dijkstras shortest path 
+  - got it working!!!!
+- Played with "The Labyrinth" on CodinGame
+
 ## Day 22
 - Adjacency list Dijkstras shortest path [link](http://geeksforgeeks.org/dijkstras-algorithm-for-adjacency-list-representation-greedy-algo-8/)
   - working on this for a while and still not working, frustrated.....

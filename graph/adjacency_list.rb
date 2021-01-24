@@ -95,7 +95,7 @@ class AdjacencyList
 
   def get_weight(source, dest)
     weight = @int_max
-    @array[source].each { |i| weight = i[:weight] if i[:dest] == dest}
+    @array[source].each { |i| weight = i[:weight] if i[:dest] == dest }
     weight
   end
     
