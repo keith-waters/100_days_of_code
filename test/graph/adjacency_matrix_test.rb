@@ -17,7 +17,7 @@ class TestAdjacenyMatrix < Minitest::Test
     @adjacency_matrix = AdjacencyMatrix.new(@graph)
   end
 
-  def test_stuff
-    @adjacency_matrix.dijkstra(0); 
+  def test_dijkstra
+    assert_equal [0, 4, 12, 19, 21, 11, 9, 8, 14], @adjacency_matrix.dijkstra(0)
   end
 end

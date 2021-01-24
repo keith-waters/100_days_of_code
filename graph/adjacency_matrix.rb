@@ -3,7 +3,7 @@ require 'set'
 class AdjacencyMatrix
   
   def initialize(graph)
-    @int_max = 9999999999
+    @int_max = Float::INFINITY
     @graph = graph
   end
 
@@ -38,6 +38,6 @@ class AdjacencyMatrix
       end    
       count+=1
     end
-    p distances
+    distances
   end
 end
