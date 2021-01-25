@@ -1,6 +1,11 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 24
+- Played with "The Labyrinth" on CodinGame
+  - much progress!! got several of the test puzzles pass
+  - loooots of help from chat. thanks again vizghar and maldocrosse
+
 ## Day 23
 - Adjacency list Dijkstras shortest path 
   - got it working!!!!
