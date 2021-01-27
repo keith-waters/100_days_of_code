@@ -1,6 +1,21 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 26
+- Easy puzzles on CodinGame
+  - finished up Chuck Norris
+  - MIME Type
+  - Horse-racing Duals
+  - 1D spreadsheet
+    - started failing at the "Deep Birecursion" test
+    - needs better memoization? :)
+
+## Day 25
+- Easy puzzles on CodinGame
+  - Mars Lander Episode 1
+  - ASCII Art
+  - started on Chuck Norris
+
 ## Day 24
 - Played with "The Labyrinth" on CodinGame
   - much progress!! got several of the test puzzles pass
