@@ -1,6 +1,16 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 27
+- Easy puzzles on CodinGame
+  - 1D spreadsheet
+    - got the memoization to work
+  - Ghost legs
+  - Rectangle partition
+    - up with 3 ways to do this
+    - most efficient: think about the sides!
+    - lots of help from twitch chat, thank you!
+
 ## Day 26
 - Easy puzzles on CodinGame
   - finished up Chuck Norris
