@@ -1,6 +1,13 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 28
+- Puzzles on CodinGame
+	- Medium
+		- There is no spoon
+	- Easy
+		- Rock Paper Scissors Lizard Spock
+
 ## Day 27
 - Easy puzzles on CodinGame
   - 1D spreadsheet
