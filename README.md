@@ -1,6 +1,17 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 30
+- Puzzles on CodinGame
+	- Easy: Dungeons and Maps
+	- Medium: The Last Crusade - Episode 1
+
+## Day 29
+- Puzzles on CodinGame
+	- Medium
+		- Shadows of the Knight
+			- unsolved thus far, have some of the tests passing...
+
 ## Day 28
 - Puzzles on CodinGame
 	- Medium
