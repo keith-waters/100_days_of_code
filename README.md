@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 31
+- Note taking on data structures
+  - array
+  - stack
+  - queue
+  - linked list
+  - binary tree
+
 ## Day 30
 - Puzzles on CodinGame
 	- Easy: Dungeons and Maps
