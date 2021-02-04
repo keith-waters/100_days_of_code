@@ -1,6 +1,11 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 33
+- Looked at the puzzle of the week..
+	- Encounter Surface
+- Clash of Code! with Alencruser and vizghar
+
 ## Day 32
 - Note taking on data structures
 - Watching [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtu.be/RBSGKlAvoiM) from free code camp
