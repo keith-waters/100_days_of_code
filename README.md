@@ -1,6 +1,10 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 32
+- Note taking on data structures
+- Watching [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtu.be/RBSGKlAvoiM) from free code camp
+
 ## Day 31
 - Note taking on data structures
   - array
