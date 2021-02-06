@@ -1,6 +1,14 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 35
+- Watching [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtu.be/RBSGKlAvoiM) from free code camp
+- Singly and Doubly linked lists
+
+## Day 34
+- Watching [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtu.be/RBSGKlAvoiM) from free code camp
+- Dynamic and Static Arrays
+
 ## Day 33
 - Looked at the puzzle of the week..
 	- Encounter Surface
