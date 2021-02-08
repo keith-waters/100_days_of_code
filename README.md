@@ -1,10 +1,15 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 37
+- Hacker Rank Data structures skill path
+	- ran into a really hard problem https://www.hackerrank.com/challenges/almost-sorted-interval 
+
 ## Day 36
 - Tried out hacker rank
 	- pretty good, has skill tracks
 	- Started down the Data Structures skill path
+
 ## Day 35
 - Watching [Data Structures Easy to Advanced Course - Full Tutorial from a Google Engineer](https://youtu.be/RBSGKlAvoiM) from free code camp
 - Singly and Doubly linked lists
