@@ -1,6 +1,10 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 38
+- Hacker Rank Data structures skill path
+	- MuumiJumala helped me reverse a linked list _without_ a stack!
+
 ## Day 37
 - Hacker Rank Data structures skill path
 	- ran into a really hard problem https://www.hackerrank.com/challenges/almost-sorted-interval 
