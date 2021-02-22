@@ -1,6 +1,15 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 40
+- Studying up on Priority queues with min/max heap
+	- [Free Code Camp vid](https://www.youtube.com/watch?v=RBSGKlAvoiM&list=WL&index=1&t=5643s&ab_channel=freeCodeCamp.org)
+	- cool take away: use a hash table to keep track of values position in the array
+
+## Day 39
+- Stacks and queues
+	- [Free Code Camp vid](https://www.youtube.com/watch?v=RBSGKlAvoiM&list=WL&index=1&t=5643s&ab_channel=freeCodeCamp.org)
+
 ## Day 38
 - Hacker Rank Data structures skill path
 	- MuumiJumala helped me reverse a linked list _without_ a stack!
