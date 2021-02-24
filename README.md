@@ -1,6 +1,10 @@
 # 100 Days of Code 
 100 days of code challenge with Ruby
 
+## Day 41
+- Trying to understand Union find...
+	- [Free Code Camp vid](https://www.youtube.com/watch?v=RBSGKlAvoiM&list=WL&index=1&t=5643s&ab_channel=freeCodeCamp.org)
+
 ## Day 40
 - Studying up on Priority queues with min/max heap
 	- [Free Code Camp vid](https://www.youtube.com/watch?v=RBSGKlAvoiM&list=WL&index=1&t=5643s&ab_channel=freeCodeCamp.org)
